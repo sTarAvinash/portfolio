@@ -32,7 +32,7 @@ Example:
 
 ## Live Demo
 
-[Check out the live portfolio](https://yourusername.github.io/portfolio)
+[Check out the live portfolio](https://staravinash.github.io/portfolio)
 
 ## Contact
 

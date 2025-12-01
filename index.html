@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avinash Kumar Barnwal - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0A84FF;
+      --secondary: #0B2838;
+      --accent: #00D4FF;
+      --bg: #0D1117;
+      --text: #FFFFFF;
+    }
+
+    .theme-blue { --primary: #0A84FF; --secondary: #0B2838; --accent: #00D4FF; --bg: #0D1117; --text: #FFFFFF; }
+    .theme-neon { --primary: #00FFC6; --secondary: #050505; --accent: #2D2D2D; --bg: #000000; --text: #FFFFFF; }
+    .theme-purple { --primary: #6C63FF; --secondary: #1E1E2D; --accent: #A393FF; --bg: #141421; --text: #F5F5F5; }
+    .theme-auto { --primary: #4F46E5; --secondary: #111827; --accent: #818CF8; --bg: #FFFFFF; --text: #111827; }
+
+    body { font-family: 'Poppins', sans-serif; transition: background-color .3s, color .3s; }
+    html { scroll-behavior: smooth; }
+
+    /* Utility using CSS variables */
+    .bg-var { background-color: var(--bg); }
+    .text-var { color: var(--text); }
+    .primary { color: var(--primary); }
+    .btn-primary { background: var(--primary); color: white; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 18px; top: 0; bottom: 0; width: 3px; background: linear-gradient(var(--primary), var(--accent)); }
+
+    /* small screens fix */
+    @media (max-width: 640px) { .desktop-hide { display: none; } }
+  </style>
+</head>
+
+<body class="theme-blue">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- Minimal AKB logo -->
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,var(--primary),var(--accent));">
+          <span class="font-bold text-white">AKB</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold primary">Avinash Kumar Barnwal</h1>
+          <p class="text-sm text-gray-600">IT Executive • Developer • Network Engineer</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="space-x-4 hidden md:flex">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#experience" class="hover:underline">Experience</a>
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="#skills" class="hover:underline">Skills</a>
+          <a href="#education" class="hover:underline">Education</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+
+        <a href="https://github.com/sTarAvinash" target="_blank" class="px-3 py-1 rounded-md border">GitHub</a>
+        <a href="https://linkedin.com/in/" target="_blank" class="px-3 py-1 rounded-md border">LinkedIn</a>
+
+        <button id="themeToggle" class="px-3 py-1 rounded-md btn-primary">Theme</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="h-screen flex items-center justify-center text-center px-4" style="background: linear-gradient(135deg,var(--primary),var(--secondary)); color:var(--text);">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- Profile photo (circular) -->
+        <img src="https://github.com/sTarAvinash.png" alt="Avinash" class="w-36 h-36 rounded-full border-4 border-white shadow-lg" />
+
+        <div>
+          <h2 class="text-4xl md:text-5xl font-extrabold">Avinash Kumar Barnwal</h2>
+          <p class="mt-3 text-xl md:text-2xl font-medium" id="roleText">IT Executive</p>
+
+          <div class="mt-6 flex gap-3 justify-center">
+            <a href="#contact" class="px-5 py-3 rounded-lg bg-white text-[var(--primary)] font-semibold">Contact Me</a>
+            <a href="https://github.com/sTarAvinash/portfolio/blob/main/assets/resume.pdf" target="_blank" class="px-5 py-3 rounded-lg border-2 border-white text-white hover:bg-white/10">Download Resume</a>
+          </div>
+
+          <div class="mt-6 flex gap-3 justify-center">
+            <a href="mailto:avinash.barnwal@outlook.com" class="text-sm underline">avinash.barnwal@outlook.com</a>
+            <span class="text-sm">• Ranchi, Jharkhand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="max-w-6xl mx-auto p-8 mt-6" id="about">
+    <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+      <div class="md:col-span-2">
+        <p class="text-lg leading-relaxed">I am an IT Executive with hands-on experience in software development, networking, and IT infrastructure management. Skilled in Next.js, MySQL, Python, and Cisco devices. I’m passionate about building efficient IT solutions and user-friendly applications.</p>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h4 class="font-semibold">Current</h4>
+            <p>IT Executive — Smart Chip Pvt. Ltd. (ASK Ranchi)</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h4 class="font-semibold">Experience</h4>
+            <p>Software Developer — R.K. Garodia & Co. (SMS Connect & Next.js Web App)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h4 class="font-semibold mb-2">Skills</h4>
+        <ul class="text-sm space-y-1 text-gray-700">
+          <li>Next.js, React, JavaScript</li>
+          <li>Python, Batch Scripts</li>
+          <li>MySQL</li>
+          <li>Cisco Networking, CCNA</li>
+          <li>Photoshop, Premiere Pro</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience (Animated Timeline) -->
+  <section class="bg-gray-50 p-8" id="experience">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Experience</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold text-xl">IT Executive</h3>
+          <p class="text-sm text-gray-500">Smart Chip Private Limited — Apr 2024 – Present</p>
+          <ul class="mt-3 list-disc list-inside text-gray-700">
+            <li>Managed Windows/Linux OS installations, updates and troubleshooting.</li>
+            <li>Technical support for Aadhaar enrollment/updation (ASK Ranchi).</li>
+            <li>Configured switches/routers; LAN/WAN monitoring.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold text-xl">Software Developer</h3>
+          <p class="text-sm text-gray-500">R.K. Garodia & Co. — Feb 2023 – May 2024</p>
+          <ul class="mt-3 list-disc list-inside text-gray-700">
+            <li>Developed Android app SMS Connect (end-to-end).</li>
+            <li>Built Next.js + MySQL web application with admin dashboard.</li>
+            <li>Improved productivity with user-focused features.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <div class="timeline bg-transparent p-4 rounded">
+          <div class="mb-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:var(--primary); color:white;">1</div>
+              <div>
+                <h4 class="font-semibold">Apr 2024 – Present</h4>
+                <p class="text-sm text-gray-600">Managing IT operations, server room, backups and integrations with UIDAI/Registrar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:var(--primary); color:white;">2</div>
+              <div>
+                <h4 class="font-semibold">Feb 2023 – May 2024</h4>
+                <p class="text-sm text-gray-600">Software development, Android & Next.js projects, deployed internal tools.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="max-w-6xl mx-auto p-8" id="projects">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Projects</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg shadow p-5 hover:shadow-lg transition">
+        <h4 class="font-bold">SMS Connect (Android)</h4>
+        <p class="text-sm text-gray-600 mt-2">Android app used internally to automate SMS operations.</p>
+        <div class="mt-4 flex gap-2">
+          <a href="#" class="px-3 py-1 rounded border text-sm">Live</a>
+          <a href="https://github.com/sTarAvinash" target="_blank" class="px-3 py-1 rounded border text-sm">Code</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-5 hover:shadow-lg transition">
+        <h4 class="font-bold">Admin Dashboard (Next.js + MySQL)</h4>
+        <p class="text-sm text-gray-600 mt-2">Web application with admin features for data management.</p>
+        <div class="mt-4 flex gap-2">
+          <a href="#" class="px-3 py-1 rounded border text-sm">Live</a>
+          <a href="https://github.com/sTarAvinash" target="_blank" class="px-3 py-1 rounded border text-sm">Code</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-5 hover:shadow-lg transition">
+        <h4 class="font-bold">Python Automation</h4>
+        <p class="text-sm text-gray-600 mt-2">Excel automation and reporting scripts.</p>
+        <div class="mt-4 flex gap-2">
+          <a href="#" class="px-3 py-1 rounded border text-sm">Live</a>
+          <a href="https://github.com/sTarAvinash" target="_blank" class="px-3 py-1 rounded border text-sm">Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="bg-gray-50 p-8" id="skills">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Skills</h2>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 bg-blue-200 rounded-lg">Python</span>
+        <span class="px-4 py-2 bg-green-200 rounded-lg">Next.js</span>
+        <span class="px-4 py-2 bg-yellow-200 rounded-lg">MySQL</span>
+        <span class="px-4 py-2 bg-red-200 rounded-lg">Networking</span>
+        <span class="px-4 py-2 bg-purple-200 rounded-lg">HTML/CSS/JS</span>
+        <span class="px-4 py-2 bg-pink-200 rounded-lg">Adobe Tools</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="max-w-6xl mx-auto p-8" id="education">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Education</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white shadow-lg p-6 rounded-lg">
+        <h3 class="text-xl font-bold">CCNA</h3>
+        <p class="text-gray-600">E-Guru Computer Centre (2023-24) - Grade A/72</p>
+      </div>
+      <div class="bg-white shadow-lg p-6 rounded-lg">
+        <h3 class="text-xl font-bold">Bachelor of Computer Applications</h3>
+        <p class="text-gray-600">Ram Lakhan Singh Yadav College, Ranchi - 72% (2021)</p>
+      </div>
+      <div class="bg-white shadow-lg p-6 rounded-lg">
+        <h3 class="text-xl font-bold">Commerce</h3>
+        <p class="text-gray-600">Markham College of Commerce - 52.4% (2018)</p>
+      </div>
+      <div class="bg-white shadow-lg p-6 rounded-lg">
+        <h3 class="text-xl font-bold">Matriculation</h3>
+        <p class="text-gray-600">Kailash Smarak High School - 62% (2015)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="p-12 text-center text-white" id="contact" style="background: linear-gradient(90deg,var(--secondary),var(--primary));">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+      <p class="mb-4">Email: <a href="mailto:avinash.barnwal@outlook.com" class="underline">avinash.barnwal@outlook.com</a></p>
+      <p class="mb-6">Ranchi, Jharkhand</p>
+
+      <div class="flex gap-3 justify-center">
+        <a href="https://github.com/sTarAvinash" target="_blank" class="px-4 py-2 rounded bg-white text-[var(--secondary)]">GitHub</a>
+        <a href="https://linkedin.com/in/" target="_blank" class="px-4 py-2 rounded bg-white text-[var(--secondary)]">LinkedIn</a>
+        <a href="https://github.com/sTarAvinash/portfolio/blob/main/assets/resume.pdf" target="_blank" class="px-4 py-2 rounded border-2 border-white">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6">
+    © 2025 Avinash Kumar Barnwal | Built with ❤️ using Tailwind CSS
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme switching
+    const themes = ["theme-blue", "theme-neon", "theme-purple", "theme-auto"];
+    let current = 0;
+    const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+
+    function applyTheme(idx) {
+      body.classList.remove(...themes);
+      body.classList.add(themes[idx]);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      current = (current + 1) % themes.length;
+      applyTheme(current);
+    });
+
+    // Rotating roles in hero
+    const roles = [
+      "IT Executive",
+      "Software Developer",
+      "Next.js & MySQL Developer",
+      "Networking & Cisco Enthusiast",
+      "Automation with Python"
+    ];
+    let ri = 0;
+    function typeRole(){
+      document.getElementById('roleText').textContent = roles[ri];
+      ri = (ri + 1) % roles.length;
+    }
+    setInterval(typeRole, 1600);
+    typeRole();
+
+    // Persist last theme (localStorage)
+    const saved = localStorage.getItem('akb_theme');
+    if(saved && themes.includes(saved)){
+      current = themes.indexOf(saved);
+      applyTheme(current);
+    }
+    // save on change
+    themeToggle.addEventListener('click', () => {
+      localStorage.setItem('akb_theme', themes[current]);
+    });
+  </script>
+</body>
+</html>
